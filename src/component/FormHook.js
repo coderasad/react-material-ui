@@ -11,7 +11,7 @@ import {
     TextField,
     Typography
 } from "@mui/material";
-import {AccountCircle} from "@mui/icons-material";
+import {useForm} from 'react-hook-form';
 
 const FormHook = () => {
     const [showForm, setShowForm]                = useState(false);
@@ -24,14 +24,7 @@ const FormHook = () => {
         skill       : [],
         accept      : false,
     });
-    const updateFormData          = event =>
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.value
-        });
-
     const {fullName, email, password, divisionName, gender, skill, accept} = formData;
-
     const deviation = [
         {
             value: 'Dk',
@@ -46,7 +39,6 @@ const FormHook = () => {
             label: 'Sylhet',
         },
     ];
-
     const handleChange   = (event) => {
         setFormData({
             ...formData,
@@ -54,6 +46,8 @@ const FormHook = () => {
         });
 
     };
+
+    const { register, handleSubmit } = useForm();
     const updateCheckBox = (event) => {
         if (event.target.checked) {
             skill.push(event.target.value)
@@ -65,17 +59,14 @@ const FormHook = () => {
             [event.target.name]: [...skill]
         });
     };
-    const formAccept     = (event) => {
-        setFormData({
-            ...formData,
-            [event.target.name]: !accept
-        });
-    };
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
+    const onSubmit = data =>
+    {
+        data.skill= formData.skill
+        setFormData(data)
+        console.log(data);
+        console.log(formData,'formData');
         setShowForm(true);
-        console.log(formData, 'formData')
     }
 
     return (
@@ -83,23 +74,23 @@ const FormHook = () => {
             <Grid container>
                 <Grid item lg={8} sx={{m: 1}}>
                     <Typography variant="h4">Registration Form React Hook</Typography>
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         {/*fullName*/}
                         <FormControl fullWidth sx={{my: 1}}>
-                            <TextField onChange={e => updateFormData(e)} name="fullName" id="name" label="Full Name"
+                            <TextField {...register("fullName", { required: true })} name="fullName" id="name" label="Full Name"
                                        variant="outlined"/>
                         </FormControl>
 
                         {/*Email*/}
                         <FormControl fullWidth sx={{my: 1}}>
-                            <TextField onChange={e => updateFormData(e)} name="email" id="email" label="Email"
+                            <TextField {...register("email")} name="email" id="email" label="Email"
                                        variant="outlined"/>
                         </FormControl>
 
                         {/*Password*/}
                         <Box sx={{my: 1, display: 'flex', gap: 2}}>
                             <FormControl style={{width: '50%'}}>
-                                <TextField onChange={e => updateFormData(e)} name="password" id="password"
+                                <TextField name="password" id="password"
                                            type="password" label="Password" variant="outlined"/>
                             </FormControl>
                             <FormControl style={{width: '50%'}}>
@@ -116,6 +107,7 @@ const FormHook = () => {
                                 label="Deviation"
                                 value={divisionName}
                                 name='divisionName'
+                                {...register('divisionName')}
                                 onChange={handleChange}
                             >
                                 {deviation.map((option) => (
@@ -130,46 +122,56 @@ const FormHook = () => {
                         <FormControl fullWidth sx={{my: 1}}>
                             <FormLabel id="gender">Gender</FormLabel>
                             <RadioGroup
-                                onChange={e => updateFormData(e)}
                                 row
                                 aria-labelledby="gender"
                                 name="gender"
                                 defaultValue="male"
+
                             >
-                                <FormControlLabel value="female" control={<Radio/>} label="Female"/>
-                                <FormControlLabel value="male" control={<Radio/>} label="Male"/>
-                                <FormControlLabel value="other" control={<Radio/>} label="Other"/>
+                                <FormControlLabel   {...register('gender')} value="female" control={<Radio/>} label="Female"/>
+                                <FormControlLabel  {...register('gender')} value="male" control={<Radio/>} label="Male"/>
+                                <FormControlLabel  {...register('gender')} value="other" control={<Radio/>} label="Other"/>
                             </RadioGroup>
                         </FormControl>
 
                         {/*skill*/}
                         <FormControl fullWidth sx={{my: 1}}>
                             <FormLabel component="legend">Skill</FormLabel>
-                            <FormGroup aria-label="position" row>
-                                <FormControlLabel control={<Checkbox/>} name='skill' onChange={e => updateCheckBox(e)}
-                                                  value='HTML'
-                                                  label="HTML"/>
-                                <FormControlLabel control={<Checkbox/>} name='skill' onChange={e => updateCheckBox(e)}
-                                                  value='CSS'
-                                                  label="CSS"/>
-                                <FormControlLabel control={<Checkbox/>} name='skill' onChange={e => updateCheckBox(e)}
-                                                  value='JS'
-                                                  label="JS"/>
-                            </FormGroup>
+                            <div>
+                                <FormControlLabel
+                                    name='skill'
+                                    value='HTML'
+                                    onChange={e => updateCheckBox(e)}
+                                    control={<Checkbox/>}
+                                    label="HTML"/>
+                                <FormControlLabel
+                                    name='skill'
+                                    value='CSS'
+                                    onChange={e => updateCheckBox(e)}
+                                    control={<Checkbox/>}
+                                    label="CSS"/>
+                                <FormControlLabel
+                                    name='skill'
+                                    value='JS'
+                                    onChange={e => updateCheckBox(e)}
+                                    control={<Checkbox/>}
+                                    label="JS"/>
+                            </div>
                         </FormControl>
 
                         {/*CheckBox*/}
                         <FormControl fullWidth sx={{my: 1}}>
                             <FormControlLabel
                                 name='accept'
-                                onChange={e => formAccept(e)}
                                 control={<Checkbox/>}
+                                {...register('accept')}
                                 label="I accept the Terms of use & Privacy Policy"/>
+
                         </FormControl>
 
                         {/*SubmitBtn*/}
                         <Box sx={{my: 1}}>
-                            <Button onClick={handleFormSubmit} type="Submit" variant="contained">Submit</Button>
+                            <Button type="Submit" variant="contained">Submit</Button>
                         </Box>
                     </form>
                 </Grid>

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c51d1b02-da56-44af-9ce6-f8e01daa357d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/FormHook.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/TestHook.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/Reg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Reg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/FormHook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/FormHook.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
     <property name="settings.editor.splitter.proportion" value="0.27470142" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -83,7 +85,8 @@
       <workItem from="1643967965215" duration="4015000" />
       <workItem from="1644470954479" duration="353000" />
       <workItem from="1644818948711" duration="22440000" />
-      <workItem from="1644902313620" duration="8909000" />
+      <workItem from="1644902313620" duration="17199000" />
+      <workItem from="1644928077887" duration="4594000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,10 @@
 import './App.css';
-import Reg from "./component/Reg";
+import FormHook from "./component/FormHook";
 
 function App() {
     return (
         <div className="App">
-            <Reg/>
+            <FormHook/>
         </div>
     );
 }

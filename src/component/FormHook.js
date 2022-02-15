@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import {AccountCircle} from "@mui/icons-material";
 
-const Reg = () => {
+const FormHook = () => {
     const [showForm, setShowForm]                = useState(false);
     const [formData, setFormData] = useState({
         fullName    : "",
@@ -82,7 +82,7 @@ const Reg = () => {
         <Container maxWidth='lg'>
             <Grid container>
                 <Grid item lg={8} sx={{m: 1}}>
-                    <Typography variant="h4">Registration Form</Typography>
+                    <Typography variant="h4">Registration Form React Hook</Typography>
                     <form>
                         {/*fullName*/}
                         <FormControl fullWidth sx={{my: 1}}>
@@ -185,7 +185,7 @@ const Reg = () => {
                             <Typography variant="body1">Accept: {accept ? "true" : "false"}</Typography>
                         </Box>
                         :
-                        'NO data'
+                        'No data'
                     }
 
                 </Grid>
@@ -195,4 +195,4 @@ const Reg = () => {
         ;
 };
 
-export default Reg;
+export default FormHook;

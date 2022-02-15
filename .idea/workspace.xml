@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c51d1b02-da56-44af-9ce6-f8e01daa357d" name="Changes" comment="" />
+    <list default="true" id="c51d1b02-da56-44af-9ce6-f8e01daa357d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/component/FormHook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/Reg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/Reg.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +83,7 @@
       <workItem from="1643967965215" duration="4015000" />
       <workItem from="1644470954479" duration="353000" />
       <workItem from="1644818948711" duration="22440000" />
-      <workItem from="1644902313620" duration="357000" />
+      <workItem from="1644902313620" duration="8909000" />
     </task>
     <servers />
   </component>
@@ -95,16 +100,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/component/Reg.js</url>
-          <line>17</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
